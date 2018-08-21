@@ -1,0 +1,29 @@
+package openBrows;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class NewTest {
+  @Test
+  public WebDriver f(WebDriver d, String Browser) {
+	  
+	 if(Browser.contentEquals("Mozilla"))
+	 {
+		 System.setProperty("webdriver.gecko.driver","E:\\luna workspace\\DEMOOO\\Drivers\\geckodriver.exe");
+		 d=new FirefoxDriver();
+		 
+		 
+	 }
+	 
+	 else if (Browser.contentEquals("chrome")) {
+		 
+		System.setProperty("webdriver.chrome.driver", "E:\\luna workspace\\DEMOOO\\Drivers\\chromedriver.exe");
+		d=new ChromeDriver();
+		
+	}
+	 return d;
+  }
+}
+
